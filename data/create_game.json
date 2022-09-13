@@ -1,0 +1,24 @@
+{
+    "Type": "Form",
+    "Title": "Create a new game",
+    "Fields": {
+        "name": {
+            "Value": "",
+            "Prompt": "What is the name of your game?",
+            "Type": "STR"
+        },
+        "descr": {
+            "Value": "",
+            "Prompt": "Please enter a brief description of the game:",
+            "Type": "STR"
+        },
+        "max_players": {
+            "Value": 10,
+            "Prompt": "What is the maximum number of players?",
+            "Type": "INT",
+            "Hival": 100,
+            "Lowval": 1
+        }
+    },
+    "MenuURL": "/menus/create_game"
+}

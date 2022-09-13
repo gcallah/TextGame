@@ -1,0 +1,22 @@
+---
+language: python
+
+python:
+    - '3.7'
+
+install:
+    - make dev_env
+
+env:
+    global:
+        - PYTHONPATH=/home/travis/build/gcallah/GameAPI
+        - GAME_HOME=/home/travis/build/gcallah/GameAPI
+
+script:
+    - make tests
+
+# deploy to heroku
+deploy:
+    - provider: heroku
+      api_key: $HEROKU_API_KEY
+      app: sd-game-api

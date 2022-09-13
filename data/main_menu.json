@@ -1,0 +1,11 @@
+{
+    "Type": "menu",
+    "Title": "Main Menu",
+    "Default": "1",
+    "Choices": {
+        "1": {"url": "/games/list", "method": "get", "text": "List all games"},
+        "2": {"url": "/games/create", "method": "get", "text": "Create a game"},
+        "x": {"url": "", "text": "Exit"}
+    }
+}
+

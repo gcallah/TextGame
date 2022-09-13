@@ -1,0 +1,10 @@
+{
+    "Type": "menu",
+    "Title": "Games Menu",
+    "Default": "j",
+    "Choices": {
+        "j": {"url": "/games/details", "method": "get", "text": "Join a game."},
+        "x": {"url": "", "method": "get", "text": "Back to main menu"}
+    }
+}
+

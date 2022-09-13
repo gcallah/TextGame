@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module db</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>db</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/gcallah/GitProjects/GameAPI/API/db.py">/Users/gcallah/GitProjects/GameAPI/API/db.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;will&nbsp;manage&nbsp;interactions&nbsp;with&nbsp;our&nbsp;data&nbsp;store.<br>
+At&nbsp;first,&nbsp;it&nbsp;will&nbsp;just&nbsp;contain&nbsp;stubs&nbsp;that&nbsp;return&nbsp;fake&nbsp;data.<br>
+Gradually,&nbsp;we&nbsp;will&nbsp;fill&nbsp;in&nbsp;actual&nbsp;calls&nbsp;to&nbsp;our&nbsp;datastore.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-get_create_game"><strong>get_create_game</strong></a>()</dt><dd><tt>Returns&nbsp;the&nbsp;form&nbsp;for&nbsp;creating&nbsp;a&nbsp;game.</tt></dd></dl>
+ <dl><dt><a name="-get_create_game_menu"><strong>get_create_game_menu</strong></a>()</dt><dd><tt>Fetch&nbsp;the&nbsp;create&nbsp;game&nbsp;menu.</tt></dd></dl>
+ <dl><dt><a name="-get_games"><strong>get_games</strong></a>()</dt><dd><tt>A&nbsp;function&nbsp;to&nbsp;return&nbsp;all&nbsp;games&nbsp;in&nbsp;the&nbsp;database.<br>
+Soon&nbsp;we&nbsp;probably&nbsp;need&nbsp;a&nbsp;flag&nbsp;to&nbsp;get&nbsp;just&nbsp;active&nbsp;games.</tt></dd></dl>
+ <dl><dt><a name="-get_games_menu"><strong>get_games_menu</strong></a>()</dt><dd><tt>Fetch&nbsp;the&nbsp;games&nbsp;menu.</tt></dd></dl>
+ <dl><dt><a name="-get_main_menu"><strong>get_main_menu</strong></a>()</dt><dd><tt>Fetch&nbsp;the&nbsp;main&nbsp;menu.</tt></dd></dl>
+ <dl><dt><a name="-load_from_file"><strong>load_from_file</strong></a>(file)</dt><dd><tt>Right&nbsp;now&nbsp;we&nbsp;store&nbsp;all&nbsp;of&nbsp;our&nbsp;data&nbsp;in&nbsp;ordinary&nbsp;files.<br>
+But&nbsp;let's&nbsp;hide&nbsp;that&nbsp;fact&nbsp;inside&nbsp;this&nbsp;module.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>CREATE_GAME_JSON</strong> = '/Users/gcallah/GitProjects/GameAPI/data/create_game.json'<br>
+<strong>CREATE_GAME_MENU_JSON</strong> = '/Users/gcallah/GitProjects/GameAPI/data/create_game_menu.json'<br>
+<strong>DATA_DIR</strong> = '/Users/gcallah/GitProjects/GameAPI/data'<br>
+<strong>GAMES_JSON</strong> = '/Users/gcallah/GitProjects/GameAPI/data/games.json'<br>
+<strong>GAMES_MENU_JSON</strong> = '/Users/gcallah/GitProjects/GameAPI/data/games_menu.json'<br>
+<strong>GAME_HOME</strong> = '/Users/gcallah/GitProjects/GameAPI'<br>
+<strong>HEROKU_HOME</strong> = '/app'<br>
+<strong>MAIN_MENU_JSON</strong> = '/Users/gcallah/GitProjects/GameAPI/data/main_menu.json'</td></tr></table>
+</body></html>

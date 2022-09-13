@@ -1,0 +1,10 @@
+{
+    "Type": "menu",
+    "Title": "Create a New Game",
+    "Default": "1",
+    "Choices": {
+        "c": {"url": "games/create", "method": "put", "text": "Create this game"},
+        "x": {"url": "", "text": "Back to main menu"}
+    }
+}
+
