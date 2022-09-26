@@ -6,11 +6,13 @@ It relies on the `text_menu` package, which is not yet on PyPi,
 import os
 import requests
 
-from API.endpoints import MAIN_MENU_ROUTE, MENU_URL
 from textapp.text_app import get_single_opt, URL, METHOD
 from textapp.text_app import TYPE, DATA, data_repr
 from textapp.text_app import FORM, run_form, MENU
 from textapp.text_app import FLDS, DATA_TEXT
+
+MAIN_MENU_ROUTE = ''
+MENU_URL = ''
 
 CONTINUE = 1
 HALT = 0
