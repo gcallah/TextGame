@@ -40,9 +40,11 @@ def run_menu(session, server, route=None, menu=None, form=None):
     """
     The caller must pass *either* `route` OR `menu`.
     """
+    print(f"route = {server}{route}")
     if menu is None:
         menu = session.get(f"{server}{route}")
     # at this point we should check for 404 etc.
+    print(f'{menu.json()=}')
     opt = get_single_opt(menu.json())
     # no URL means exit!
     if not opt.get(URL):
