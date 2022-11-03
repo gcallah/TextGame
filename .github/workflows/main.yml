@@ -32,4 +32,4 @@ jobs:
         run: pip install -r requirements-dev.txt
 
       - name: Run Python tests.
-        run: make all_tests
+        run: make tests
