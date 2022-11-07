@@ -42,10 +42,10 @@ def run_menu(session, server, route=None, menu=None, form=None):
     """
     print(f"route = {server}{route}")
     if menu is None:
-        menu = session.get(f"{server}{route}")
+        menu = session.get(f"{server}{route}").json()
     # at this point we should check for 404 etc.
-    print(f'{menu.json()=}')
-    opt = get_single_opt(menu.json())
+    print(f'{menu=}')
+    opt = get_single_opt(menu)
     # no URL means exit!
     if not opt.get(URL):
         return HALT
@@ -55,14 +55,14 @@ def run_menu(session, server, route=None, menu=None, form=None):
         if not result:
             print(f"Get method failed with code: {result.status_code}")
             exit(1)
-        print(result)
+        print(result.content)
         json_ret = result.json()
         if json_ret[TYPE] == DATA:
             display_data_page(session, server, json_ret)
         elif json_ret[TYPE] == FORM:
             handle_form(session, server, json_ret)
         elif json_ret[TYPE] == MENU:
-            run_menu(server, menu=json_ret)
+            run_menu(session, server, menu=json_ret)
     elif opt[METHOD] == 'post':
         if form is None:
             print("Data to post missing from post method.")
