@@ -1,9 +1,12 @@
 LINTER = flake8
-COVER_PKG = $(shell pwd)
+PYTESTFLAGS = -vv --verbose --tb=short
 
 FORCE:
 
 docs: $(DOCFILES)
+
+%.py: FORCE
+	pytest -s tests/test_$*.py
 
 %.html: %.py
 	pydoc3 -w ./$<
@@ -12,7 +15,7 @@ docs: $(DOCFILES)
 tests: lint unit
 
 unit: FORCE
-	nosetests --exe --verbose --with-coverage --cover-package=$(COVER_PKG)
+	pytest $(PYTESTFLAGS)
 
 lint: FORCE
 	$(LINTER) *.py
