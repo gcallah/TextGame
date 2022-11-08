@@ -46,8 +46,9 @@ def run_menu(session, server, route=None, menu=None, form=None):
     status = ERROR
     try:
         if menu is None:
-            menu = session.get(f"{server}{route}").json()
-            status = menu.status_code
+            menu_resp = session.get(f"{server}{route}")
+            status = menu_resp.status_code
+            menu = menu_resp.json()
     except Exception as e:
         print(str(e))
     if status != OK:
