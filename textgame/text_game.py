@@ -4,6 +4,7 @@ It relies on the `text_menu` package, which is not yet on PyPi,
 """
 
 import os
+from http.client import OK
 import requests
 
 from textapp.text_app import get_single_opt, URL, METHOD
@@ -16,6 +17,7 @@ MENU_URL = ''
 
 CONTINUE = 1
 HALT = 0
+ERROR = -1
 
 API_SERVER_URL = "GAME_API_URL"
 LOCAL_HOST = "http://127.0.0.1:8000"
@@ -41,9 +43,15 @@ def run_menu(session, server, route=None, menu=None, form=None):
     The caller must pass *either* `route` OR `menu`.
     """
     print(f"route = {server}{route}")
-    if menu is None:
-        menu = session.get(f"{server}{route}")
-    # at this point we should check for 404 etc.
+    status = ERROR
+    try:
+        if menu is None:
+            menu = session.get(f"{server}{route}")
+            status = menu.status_code
+    except Exception as e:
+        print(str(e))
+    if status != OK:
+        return ERROR
     print(f'{menu.json()=}')
     opt = get_single_opt(menu.json())
     # no URL means exit!
@@ -77,8 +85,10 @@ def main():
     print(f"API server is {server}")
     session = requests.Session()
     cont = CONTINUE
-    while cont:
+    while cont == CONTINUE:
         cont = run_menu(session, server, route=MAIN_MENU_ROUTE)
+    if cont == ERROR:
+        return ERROR
 
 
 if __name__ == "__main__":
