@@ -12,7 +12,7 @@ from textapp.text_app import TYPE, DATA, data_repr
 from textapp.text_app import FORM, run_form, MENU
 from textapp.text_app import FLDS, DATA_TEXT
 
-MAIN_MENU_ROUTE = '/main_menu'
+MAIN_MENU_ROUTE = '/MainMenu'
 MENU_URL = ''
 
 CONTINUE = 1
@@ -48,6 +48,7 @@ def run_menu(session, server, route=None, menu=None, form=None):
         if menu is None:
             menu_resp = session.get(f"{server}{route}")
             status = menu_resp.status_code
+            print(f'{status=}')
             menu = menu_resp.json()
     except Exception as e:
         print(str(e))
