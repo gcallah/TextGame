@@ -195,9 +195,14 @@ TEST_MENU = {
     TITLE: MAIN_MENU,
     DEFAULT: CONTINUE,
     CHOICES: {
-        CONTINUE: {FUNC: go_on,
-                   TEXT: "Continue displaying menu"},
-        EXIT: {FUNC: exit, TEXT: "Exit", },
+        CONTINUE: {
+            FUNC: go_on,
+            TEXT: "Continue displaying menu",
+        },
+        EXIT: {
+            FUNC: exit,
+            TEXT: "Exit",
+        },
     },
 }
 

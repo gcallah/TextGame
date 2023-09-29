@@ -13,7 +13,6 @@ from textapp.text_app import FORM, run_form, MENU
 from textapp.text_app import FLDS, DATA_TEXT
 
 MAIN_MENU_ROUTE = '/MainMenu'
-MENU_URL = ''
 
 CONTINUE = 1
 HALT = 0
@@ -25,30 +24,29 @@ LOCAL_HOST = "http://127.0.0.1:8000"
 EXIT = 'x'
 
 
-def display_data_page(session, server, data):
-    print(f"\n{data_repr(data)[DATA_TEXT]}\n")
-    if MENU_URL in data:
-        run_menu(session, server, route=data[MENU_URL])
+def display_data_page(session, server, json_ret):
+    print(f"\n{data_repr(json_ret)[DATA_TEXT]}\n")
+    if MENU in json_ret:
+        run_menu(session, server, route=json_ret[MENU])
 
 
 def handle_form(session, server, form):
     form = run_form(form)
-    if MENU_URL in form:
-        print(f"form[MENU_URL] = {form[MENU_URL]}")
-        run_menu(session, server, route=form[MENU_URL])
+    if MENU in form:
+        run_menu(session, server, route=form[MENU])
 
 
 def run_menu(session, server, route=None, menu=None, form=None):
     """
     The caller must pass *either* `route` OR `menu`.
     """
-    print(f"route = {server}{route}")
+    # print(f"route = {server}{route}")
     status = ERROR
     try:
         if menu is None:
             menu_resp = session.get(f"{server}{route}")
             status = menu_resp.status_code
-            print(f'{status=}')
+            # print(f'{status=}')
             menu = menu_resp.json()
     except Exception as e:
         print(str(e))
@@ -65,7 +63,7 @@ def run_menu(session, server, route=None, menu=None, form=None):
         if not result:
             print(f"Get method failed with code: {result.status_code}")
             exit(1)
-        print(result.content)
+        # print(result.content)
         json_ret = result.json()
         if json_ret[TYPE] == DATA:
             display_data_page(session, server, json_ret)
